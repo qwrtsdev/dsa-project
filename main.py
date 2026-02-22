@@ -1,15 +1,31 @@
+import csv
+import sys
+
+data = []
+
 def main():
-  user_input = input("Enter a command: ")
+  print("====================================")
+  print("Loading CSV file...")
+  load_csv()
+  print("CSV file loaded successfully.")
+  print("====================================\n")
   
-  match user_input:
-    case "hello":
-      print("Hello!")
-    case "bye":
-      print("Goodbye!")
-    case _:
-      print("Unknown command.")
-      
-  main()
+  while True:
+    user_input = input("Enter a command: ")
+  
+    match user_input:
+      case "show":
+        print(data)
+      case "exit":
+        sys.exit(0)
+      case _:
+        print("Unknown command.")
+  
+def load_csv():
+  with open("CprE_Subject.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+      data.append(row)
 
 if __name__ == "__main__":
   main()
