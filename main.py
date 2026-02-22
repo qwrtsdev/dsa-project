@@ -20,6 +20,8 @@ def main():
         sys.exit(0)
       case _:
         print("Unknown command.")
+        
+    print("\n====================================\n")
   
 def load_csv():
   with open("CprE_Subject.csv", "r") as file:
