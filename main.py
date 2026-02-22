@@ -11,7 +11,7 @@ def main():
   print("====================================\n")
   
   while True:
-    user_input = input("Enter a command: ")
+    user_input = input(">>> ")
   
     match user_input:
       case "show":
