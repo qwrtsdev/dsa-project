@@ -1,0 +1,10 @@
+[data]
+- The CSV file has consistant structure of data but not in the order
+
+[get max load]
+TODO: Instantly returns the course with the highest credits.
+- ordering from the most credits to the least credits
+- but if more than one subject has the same credits we have to order it from the "coursecode"
+
+[list sorted]
+- ordering courses base on coursecode
