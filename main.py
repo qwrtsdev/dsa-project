@@ -14,8 +14,6 @@ def options_selector():
     user_input = input(">>> ")
   
     match user_input:
-      case "raw":
-        print(data)
       case "get_max_load":
         get_max_load(data)
       case "list_sorted":
