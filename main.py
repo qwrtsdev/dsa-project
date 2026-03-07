@@ -1,5 +1,7 @@
 import csv
 import sys
+from functions.get_max_load import get_max_load
+from functions.list_sorted import list_sorted
 
 data = []
 
@@ -15,11 +17,9 @@ def options_selector():
       case "raw":
         print(data)
       case "get_max_load":
-        # TODO: Instantly returns the course with the highest credits.
-        get_max_load()
+        get_max_load(data)
       case "list_sorted":
-        # TODO: Prints all courses sorted by CourseCode
-        list_sorted()
+        list_sorted(data)
       case "exit":
         sys.exit(0)
       case _:
@@ -31,12 +31,6 @@ def load_csv():
     for row in reader:
       data.append(row)
     data.pop(0)
-    
-def get_max_load():
-  pass
-    
-def list_sorted():
-  pass
 
 if __name__ == "__main__":
   main()
