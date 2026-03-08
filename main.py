@@ -1,5 +1,4 @@
 import csv
-import sys
 from functions.get_max_load import get_max_load
 from functions.list_sorted import list_sorted
 
@@ -9,6 +8,13 @@ def main():
   load_csv()
   options_selector()
 
+def load_csv():
+  with open("CprE_Subject.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+      data.append(row)
+    data.pop(0)
+    
 def options_selector():
   while True:
     user_input = input(">>> ")
@@ -18,17 +24,8 @@ def options_selector():
         get_max_load(data)
       case "list_sorted":
         list_sorted(data)
-      case "exit":
-        sys.exit(0)
       case _:
-        print("Unknown command.")
-  
-def load_csv():
-  with open("CprE_Subject.csv", "r") as file:
-    reader = csv.reader(file)
-    for row in reader:
-      data.append(row)
-    data.pop(0)
+        pass
 
 if __name__ == "__main__":
   main()
